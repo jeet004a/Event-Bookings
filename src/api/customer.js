@@ -109,7 +109,7 @@ module.exports = async(app) => {
         }
     })
 
-    app.get('/oldorder', UserAuth, async(req, res, next) => {
+    app.get('/oldorders', UserAuth, async(req, res, next) => {
         try {
             // console.log(req.user)
             const userdata = await service.pastbookings(req.user)
