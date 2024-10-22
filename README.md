@@ -1,7 +1,9 @@
 Node.js File Upload Application
+
 This Node.js application conatins event services backend. User can search the services (services like :- DJ, Venues, Hotels etc). Application admin can manage their services and orders.
 
 Features
+
 User can opt the services like book hotels, venues, DJ etc.
 Admin can manage their services.
 User can book services based on availability.
