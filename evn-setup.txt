@@ -1,0 +1,5 @@
+//Please create a .env file and add the below details for env setup
+
+PORT= //Enter you port number 
+APP_SECRET= // Please enter your app secret
+DB_URL= //Enter you MongoDB URL
