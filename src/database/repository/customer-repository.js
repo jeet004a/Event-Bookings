@@ -144,6 +144,28 @@ class CustomerRepository {
         }
     }
 
+    async bookinghistory(Inputs) {
+        try {
+            const { email, _id } = Inputs
+            const data = await CustomerModel.findById(_id).populate('bookings')
+            let date = new Date()
+                // console.log(date)
+                // console.log(data.bookings)
+            let result = new Set
+            for (let i = 0; i < data.bookings.length; i++) {
+                for (let j = 0; j < data.bookings[i].bookingdate.length; j++) {
+                    if (data.bookings[i].bookingdate[j] < date) {
+                        result.add(data.bookings[i])
+                    }
+                }
+            }
+            let userdata = Array.from(result)
+            return userdata
+        } catch (error) {
+            console.log('Error location booking history repository', error)
+        }
+    }
+
 
 }
 

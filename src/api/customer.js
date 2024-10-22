@@ -109,6 +109,19 @@ module.exports = async(app) => {
         }
     })
 
+    app.get('/oldorder', UserAuth, async(req, res, next) => {
+        try {
+            // console.log(req.user)
+            const userdata = await service.pastbookings(req.user)
+            if (userdata) {
+                return res.status(200).json({ 'Old Orders': userdata })
+            }
+            return res.status(200).json({ "MSG": 'Somthing went wrong' })
+        } catch (error) {
+            console.log('Error location cutomer old orders api', error)
+        }
+    })
+
 
 
 }

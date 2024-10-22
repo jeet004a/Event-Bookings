@@ -81,6 +81,15 @@ class CustomerService {
         }
     }
 
+    async pastbookings(Inputs) {
+        try {
+            const result = await this.repository.bookinghistory(Inputs)
+            return Formatedata(result)
+        } catch (error) {
+            console.log('Error location past bookings', error)
+        }
+    }
+
 }
 
 module.exports = CustomerService
